@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  height: 60px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar-left {
+  width: 30%;
+  text-align: left;
+}
+
+.navbar-center {
+  width: 40%;
+  text-align: center;
+}
+
+.navbar-right {
+  width: 30%;
+  text-align: right;
+}
+
+.carrito{
+  margin-left: 2rem;
+}
+
+.carrito-img {
+  width: 3rem;
+}

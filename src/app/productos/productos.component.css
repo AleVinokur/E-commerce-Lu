@@ -1,0 +1,17 @@
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto {
+  width: calc(33.33% - 2%);
+  margin-bottom: 2%;
+  margin-top: 10%;
+}
+
+.producto img {
+  max-width: 50%;
+  height: auto;
+}

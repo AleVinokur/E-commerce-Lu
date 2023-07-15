@@ -1,0 +1,9 @@
+.carousel-item {
+  height: 15rem;
+}
+
+.carousel-caption {
+  background-color: aliceblue;
+  color: #000000;
+  padding: 20px;
+}
