@@ -11,18 +11,15 @@ export class PortadasComponent implements AfterViewInit {
   portadas = [
     {
       imagen: '../../img/images.jpg',
-      titulo: 'Portada 1',
-      descripcion: 'Descripción de la portada 1'
+      titulo: 'Portada 1'
     },
     {
       imagen: '../../img/images.jpg',
-      titulo: 'Portada 2',
-      descripcion: 'Descripción de la portada 2'
+      titulo: 'Portada 2'
     },
     {
       imagen: '../../img/images.jpg',
-      titulo: 'Portada 3',
-      descripcion: 'Descripción de la portada 3'
+      titulo: 'Portada 3'
     },
     // Agrega más portadas según tus necesidades
   ];
