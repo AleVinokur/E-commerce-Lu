@@ -16,7 +16,7 @@ import { CarritoComponent } from './carrito/carrito.component'; // No olvides im
     InicioComponent,
     PortadasComponent,
     ProductosComponent,
-    CarritoComponent // Asegúrate de agregar CarritoComponent aquí
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,

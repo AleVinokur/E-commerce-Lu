@@ -1,14 +1,18 @@
-<div *ngIf="carrito.length > 0; else noItems">
-  <h2>Carrito de compras</h2>
-  <div *ngFor="let producto of carrito">
-    <img [src]="producto.imagen" alt="Producto">
-    <h3>{{ producto.nombre }}</h3>
-    <p>Precio: {{ producto.precio }}</p>
-    <p>Cantidad: <input type="number" [(ngModel)]="producto.cantidad" (change)="actualizarCantidad(producto)"></p>
-    <button (click)="eliminarProducto(producto)">Eliminar</button>
+<section class="shop">
+  <div *ngIf="carrito.length > 0; else noItems">
+    <h2>Carrito de compras</h2>
+    <div class="cart-item" *ngFor="let producto of carrito">
+      <img [src]="producto.imagen" alt="Producto">
+      <div class="item-details">
+        <h3>{{ producto.nombre }}</h3>
+        <p>Precio: {{ producto.precio | currency }}</p>
+        <p>Cantidad: <button class="btn-cantidad btn" (click)="decrementarCantidad(producto)">-</button> {{ producto.cantidad }} <button class="btn-cantidad btn" (click)="incrementarCantidad(producto)">+</button></p>
+      </div>
+        <button class="btn btn-danger" (click)="eliminarProducto(producto)">Eliminar</button>
+    </div>
+    <button class="btn-pago" (click)="realizarPago()">Realizar Pago con Mercado Pago</button>
   </div>
-  <button (click)="realizarPago()">Realizar Pago con Mercado Pago</button>
-</div>
-<ng-template #noItems>
-  <p>No hay productos en el carrito</p>
-</ng-template>
+  <ng-template #noItems>
+    <p class="empty-cart">No hay productos en el carrito</p>
+  </ng-template>
+</section>

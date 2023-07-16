@@ -37,6 +37,12 @@ export class ProductosComponent {
   constructor(private carritoService: CarritoService) { }
 
   agregarAlCarrito(producto: Producto) {
-    this.carritoService.agregarProducto(producto);
+    const productoExistente = this.carritoService.obtenerProductos().find(p => p.nombre === producto.nombre);
+
+    if (productoExistente) {
+      productoExistente.cantidad += 1;
+    } else {
+      this.carritoService.agregarProducto({ ...producto, cantidad: 1 });
+    }
   }
 }
