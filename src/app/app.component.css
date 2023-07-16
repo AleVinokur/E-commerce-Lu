@@ -1,3 +1,7 @@
+/* body {
+  background: rgb(27,0,36);
+background: linear-gradient(90deg, rgba(27,0,36,1) 0%, rgba(247,77,217,0.9332107843137255) 26%, rgba(153,0,121,1) 68%, rgba(94,0,68,0.9220063025210083) 100%);
+} */
 body {
-  background-color: rgba(215, 103, 205, 0.724);
+  background-image: url('../img/image-388zo1fx.png');
 }

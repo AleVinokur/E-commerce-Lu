@@ -10,11 +10,11 @@ import * as $ from 'jquery';
 export class PortadasComponent implements AfterViewInit {
   portadas = [
     {
-      imagen: '../../img/images.jpg',
+      imagen: '../../img/nail-makeup-beauty-facebook-banner-design-template-30a087d9706b012d69f59631ae0c77b0_screen.jpg',
       titulo: 'Portada 1'
     },
     {
-      imagen: '../../img/images.jpg',
+      imagen: '../../img/Tamp-Nails-Cover_edited-1.jpg',
       titulo: 'Portada 2'
     },
     {
