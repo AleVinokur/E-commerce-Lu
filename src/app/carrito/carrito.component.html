@@ -1,17 +1,19 @@
 <section class="shop">
   <div *ngIf="carrito.length > 0; else noItems">
-    <h2>Carrito de compras</h2>
+    <h1 class="titulo-carrito">Carrito de compras</h1>
     <div class="cart-item" *ngFor="let producto of carrito">
       <img [src]="producto.imagen" alt="Producto">
       <div class="item-details">
         <h3>{{ producto.nombre }}</h3>
-        <p>Precio: {{ producto.precio | currency }}</p>
+        <p>Precio: {{ calcularSubtotalProducto(producto) | currency }}</p>
         <p>Cantidad: <button class="btn-cantidad btn" (click)="decrementarCantidad(producto)">-</button> {{ producto.cantidad }} <button class="btn-cantidad btn" (click)="incrementarCantidad(producto)">+</button></p>
       </div>
-        <button class="btn btn-danger" (click)="eliminarProducto(producto)">Eliminar</button>
+        <button class="delete btn btn-danger" (click)="eliminarProducto(producto)">Eliminar</button>
     </div>
-    <button class="btn-pago" (click)="realizarPago()">Realizar Pago con Mercado Pago</button>
+    <h3 class="mt-5 total-pagar">Total a pagar: {{ calcularPrecioTotal() | currency }}</h3>
+    <button class="btn-pago btn" (click)="realizarPago()">Realizar Pago con Mercado Pago</button>
   </div>
+
   <ng-template #noItems>
     <p class="empty-cart">No hay productos en el carrito</p>
   </ng-template>

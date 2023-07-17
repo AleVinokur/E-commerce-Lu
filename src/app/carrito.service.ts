@@ -13,8 +13,10 @@ export class CarritoService {
     const index = this.productos.findIndex((p) => p.nombre === producto.nombre);
 
     if (index !== -1) {
+      // Si el producto ya existe en el carrito, simplemente aumenta su cantidad
       this.productos[index].cantidad += producto.cantidad;
     } else {
+      // Si el producto no existe en el carrito, agrégalo directamente
       this.productos.push(producto);
     }
   }
@@ -28,27 +30,28 @@ export class CarritoService {
   }
 
   actualizarCantidadProducto(producto: Producto) {
-    // Encuentra el índice del producto en el array de productos del carrito
-    const index = this.productos.findIndex((p) => p.nombre === producto.nombre);
+    // Busca el producto en el carrito por su nombre
+    const productoEnCarrito = this.productos.find((p) => p.nombre === producto.nombre);
 
-    if (index !== -1) {
-      // Actualiza la cantidad del producto en el carrito
-      this.productos[index].cantidad = producto.cantidad;
+    if (productoEnCarrito) {
+      // Si el producto está en el carrito, actualiza su cantidad
+      productoEnCarrito.cantidad = producto.cantidad;
     }
   }
 
   eliminarProducto(producto: Producto) {
-    // Encuentra el índice del producto en el array de productos del carrito
-    const index = this.productos.findIndex((p) => p.nombre === producto.nombre);
-
-    if (index !== -1) {
-      // Elimina el producto del carrito usando el índice
-      this.productos.splice(index, 1);
-    }
+    // Filtra el producto para eliminarlo del carrito
+    this.productos = this.productos.filter((p) => p.nombre !== producto.nombre);
   }
 
   actualizarCarrito(carrito: Producto[]) {
     this.productos = carrito;
   }
+
+  calcularPrecioTotal(): number {
+    // Calcula el precio total sumando el precio de cada producto por su cantidad
+    return this.productos.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
+  }
+
 
 }

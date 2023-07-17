@@ -9,11 +9,13 @@ import { Producto } from '../producto.model';
 })
 export class CarritoComponent implements OnInit {
   carrito: Producto[] = [];
+  precioTotal: number = 0;
 
   constructor(private carritoService: CarritoService) {}
 
   ngOnInit() {
     this.carrito = this.agruparProductos(this.carritoService.obtenerProductos());
+    this.precioTotal = this.carritoService.calcularPrecioTotal();
   }
 
   agruparProductos(productos: Producto[]): Producto[] {
@@ -34,25 +36,37 @@ export class CarritoComponent implements OnInit {
   eliminarProducto(producto: Producto) {
     this.carrito = this.carrito.filter((p) => p.nombre !== producto.nombre);
     this.carritoService.actualizarCarrito(this.carrito);
+    this.precioTotal = this.carritoService.calcularPrecioTotal();
   }
 
   eliminarTodo() {
     this.carritoService.limpiarCarrito();
     this.carrito = [];
+    this.precioTotal = 0;
   }
 
   incrementarCantidad(producto: Producto) {
     producto.cantidad += 1;
+    this.precioTotal = this.carritoService.calcularPrecioTotal();
   }
 
   decrementarCantidad(producto: Producto) {
     if (producto.cantidad > 1) {
       producto.cantidad -= 1;
+      this.precioTotal = this.carritoService.calcularPrecioTotal();
     }
   }
 
-  calcularPrecioTotal(producto: Producto): number {
+  calcularSubtotalProducto(producto: Producto): number {
     return producto.precio * producto.cantidad;
+  }
+
+  calcularPrecioTotal(): number {
+    let total = 0;
+    this.carrito.forEach((producto) => {
+      total += this.calcularSubtotalProducto(producto);
+    });
+    return total;
   }
 
   realizarPago() {
