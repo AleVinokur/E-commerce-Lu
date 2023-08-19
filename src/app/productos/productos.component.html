@@ -2,9 +2,7 @@
   <div class="producto" *ngFor="let producto of catalogoProductos">
     <img [src]="producto.imagen" alt="Producto">
     <h3>{{ producto.nombre }}</h3>
-    <p>{{ producto.descripcion }}</p>
-    <p>Precio: {{ producto.precio }}</p>
-    <button class="btn btn-primary" (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
-    <!-- Agrega más información sobre el producto según tus necesidades -->
+    <strong><p>Precio: {{ producto.precio }}</p></strong>
+    <button class="btn btn-success" (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
   </div>
 </div>

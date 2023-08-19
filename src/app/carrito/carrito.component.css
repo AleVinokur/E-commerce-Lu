@@ -1,5 +1,4 @@
 .shop {
-  background-image: url('../../img/image-412ywcwz.png');
   padding-bottom: 50%;
 }
 
@@ -71,13 +70,13 @@ p {
   margin-top: 10rem;
 }
 .empty-cart h2{
-  color: bisque;
-  margin-top: 3rem;
+  color: rgb(0, 0, 0);
+  margin-top: 10rem;
   font-size: xx-large;
 }
 
 .empty-cart-add img {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 10rem;
   width: 5rem;
 }
@@ -97,3 +96,48 @@ p {
 .delete {
   margin-right: 3rem;
 }
+
+.navbar {
+  background-image: url('../../img/image-ivom1zup.png');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar-left {
+  width: 30%;
+  text-align: left;
+}
+
+.navbar-center {
+  width: 40%;
+  text-align: center;
+}
+
+.navbar-right {
+  width: 30%;
+  text-align: right;
+}
+
+.carrito{
+  margin-left: 2rem;
+}
+
+.carrito-img {
+  width: 3rem;
+}
+
+.logo {
+  width: 25%;
+ }
+
+ .home {
+    width: 40%;
+    margin-right: 1rem;
+ }

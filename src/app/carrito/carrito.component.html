@@ -1,3 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Nombre o logo -->
+    <a class="navbar-brand" href="#"><img class="logo" src="../../img/logo.png" alt="Logo"></a>
+
+    <!-- Botón de hamburguesa para dispositivos móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <!-- Carrito -->
+        <div>
+          <li class="nav-item carrito">
+            <a href="#"><img  class="home" src="../../img/hogar.png" alt="Home"></a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <section class="shop">
   <div *ngIf="carrito.length > 0; else noItems">
     <h1 class="titulo-carrito">Carrito de compras</h1>
@@ -20,7 +44,7 @@
     </div>
     <div class="empty-cart-add">
       <h3>Agrega productos al carrito para seguir con la compra</h3>
-      <img src="../../img/carrito.webp" alt="">
+      <a href="#"><img src="../../img/carrito.webp" alt=""></a>
     </div>
 
 
